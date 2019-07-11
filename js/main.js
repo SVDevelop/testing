@@ -1,51 +1,30 @@
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
-  //   loop:true,
-  //   margin:10,
-  //   responsiveClass:true,
-  //   autoWidth:true,
-  //   responsive:{
-  //       0:{
-  //           items:1,
-  //           nav:true
-  //       },
-  //       600:{
-  //           items:3,
-  //           nav:false
-  //       },
-  //       1000:{
-  //           items:5,
-  //           nav:true,
-  //           loop:false
-  //       }
-  //   }
-    loop:true, //Зацикливаем слайдер
-    margin:10, //Отступ от элемента справа в 50px
-    nav:true,   //Отключение навигации
+    loop:true, 
+    margin:10,
+    nav:true,
+    dots: false,
     stafePadding: 20,
     autoWidth:true, 
-    autoplay:false, //Автозапуск слайдера
-    smartSpeed:1000, //Время движения слайда
-    autoplayTimeout:2000, //Время смены слайда
-    responsive:{ //Адаптивность. Кол-во выводимых элементов при определенной ширине.
+    autoplay:false,
+    smartSpeed:1000,
+    autoplayTimeout:2000,
+    navText : ["",""],
+    responsive:{
         0:{
             items:1,
             nav:true
         },
         600:{
-            items:4,
+            items:2,
             nav:true
         },
         1000:{
-            items:4,
-            nav:false
+            items:3,
+            nav:true
         }
     }
    });
-
-
-
-
 });
 
     ymaps.ready(function () {
@@ -55,8 +34,6 @@ $(document).ready(function(){
             }, {
                 searchControlProvider: 'yandex#search'
             }),
-
-            // Создаём макет содержимого.
             MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
                 '<div style="color: #55FFFF; font-weight: bold;">$[properties.iconContent]</div>'
             ),
@@ -65,15 +42,9 @@ $(document).ready(function(){
                 hintContent: 'Собственный значок метки',
                 balloonContent: 'Это красивая метка'
             }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
                 iconLayout: 'default#image',
-                // Своё изображение иконки метки.
                 iconImageHref: 'img/icon.png',
-                // Размеры метки.
                 iconImageSize: [26, 26],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
                 iconImageOffset: [-15, -25]
             }
 
